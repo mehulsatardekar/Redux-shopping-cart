@@ -8,9 +8,9 @@ export default defineConfig({
     react(),
     VitePWA({
       includeAssets: [
-        "./src/assets/logo.svg",
-        "./src/assets/180.png",
-        "./src/assets/logo.svg",
+        "./src/favicon_package_v0.16/favicon.ico",
+        "./src/favicon_package_v0.16/favicon-32x32.png",
+        "./src/favicon_package_v0.16/android-chrome-192x192.png",
       ],
       manifest: {
         name: "Redux Mart",
@@ -18,42 +18,32 @@ export default defineConfig({
         description:
           "Redux Shopping Cart App Build with Redux and Redux Toolkit",
         theme_color: "#645cff",
-        start_url: "https://reduxmart.vercel.app/",
+        start_url: "/",
+        display: "standalone",
         icons: [
           {
-            src: "./src/assets/logo.jpg.192x192.png",
+            src: "./src/favicon_package_v0.16/android-chrome-192x192.png",
             sizes: "192x192",
             type: "image/png",
           },
           {
-            src: "./src/assets/logo_512.png",
+            src: "./src/favicon_package_v0.16/logo_512.png",
             sizes: "512x512",
             type: "image/png",
           },
+          {
+            src: "./src/favicon_package_v0.16/logo_512.png",
+            sizes: "512x512",
+            type: "image/png",
+            purpose: "maskable",
+          },
         ],
       },
-      icons: [
-        {
-          src: "./src/assets/logo.jpg.192x192.png",
-          sizes: "192x192",
-          type: "image/png",
-          purpose: "maskable",
-        },
-        {
-          src: "./src/assets/logo_512.png",
-          sizes: "512x512",
-          type: "image/png",
-          purpose: "maskable",
-        },
-        {
-          src: "./src/assets/logo_512.png",
-          sizes: "512x512",
-          type: "image/png",
-          purpose: "maskable",
-        },
-      ],
+
       registerType: "autoUpdate",
       injectRegister: "script",
+      strategies: "generateSW",
+
       devOptions: {
         enabled: true,
       },
